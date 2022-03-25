@@ -10,6 +10,7 @@ var lowerChosen = false;
 var numberChosen = false;
 var specialChosen = false;
 var validChar = [];
+var passLength = 0;
 
 function writePassword() {
   var password = generatePassword();
@@ -28,11 +29,11 @@ function generatePassword() {
     alert("Your password must be at least 8 characters, try again.");
     return generatePassword();
   }
-  else (passLength == null) {
+  else {
+    passLength = parseFloat(passLength);
     askCharacters();
     generateArray();
-    var finalPassword = generateFinalPassword();
-    return finalPassword;
+    generateFinalPassword(passLength);
   }
 }
 
@@ -45,38 +46,41 @@ function askCharacters() {
 
    if (!upperChosen && !lowerChosen && !numberChosen && !specialChosen) {
      window.alert("You must choose at least one character to be include in your password. Try to do it correctly this time please.");
+     return askCharacters();
    }
  }
 while (!upperChosen && !lowerChosen && !numberChosen && !specialChosen);
 }
 
 function generateArray() {
-  validChar = [];
-  if(!upperChosen) {
+  var validChar = [];
+  if(upperChosen) {
     validChar = validChar.concat(upperCaseArray[Math.floor(Math.random() * 26)])
     console.log(validChar)
   }
 
-  if(!lowerChosen) {
+  if(lowerChosen) {
     validChar = validChar.concat(lowerCaseArray[Math.floor(Math.random() * 26)])
     console.log(validChar)
   }
 
-  if(!numberChosen) {
-    validChar = validChar.concat(numberCharArray[Math.floor(Math.random() * 10)])
+  if(numberChosen) {
+    validChar = validChar.concat(numbersCharArray[Math.floor(Math.random() * 10)])
     console.log(validChar)
   }
 
-  if(!specialChosen) {
+  if(specialChosen) {
     validChar = validChar.concat(specialSymArray[Math.floor(Math.random() * 16)])
     console.log(validChar)
   }
 }
 
-function generateFinalPassword() {
+function generateFinalPassword(passLength) {
+  var finalPassword;
   for (let i = 0; i < passLength; i++) {
-    finalPassword +=validChar[Math.floor(Math.random() * validChar.length)];
+    finalPassword = Math.floor(Math.random() * validChar.length);
   }
+  console.log(finalPassword)
   return finalPassword;
 }
 
