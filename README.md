@@ -1,6 +1,6 @@
 # HW-3-Password-Creator
 
-##Password Generator
+## Password Generator
 
 We have created this site to allow people to obtain a random generated password for better security of accounts. The generator allows you to chose what characters you desire and how long you wish the password to be. It is also provides secure measures to make sure you have a long enough password to be valid and used. 
 
@@ -8,13 +8,13 @@ https://torihendricks927.github.io/HW-3-Password-Creator/
 
 ![alt text](/assets/Screen%20Shot%202022-03-26%20at%202.56.21%20PM.png)
 
-##Credits
+## Credits
 
 https://dev.to/code_mystery/random-password-generator-using-javascript-6a
 
 https://w3collective.com/random-password-generator-javascript/
 
-##License
+## License
 
 MIT License
 
